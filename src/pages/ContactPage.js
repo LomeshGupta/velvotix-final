@@ -49,6 +49,23 @@ const INFO = [
   },
 ];
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  await fetch("/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: encode({
+      "form-name": "contact",
+      ...form,
+      interest: form.interest.join(", "),
+    }),
+  });
+
+  setDone(true);
+};
 export default function ContactPage() {
   const [done, setDone] = useState(false);
   const [form, setForm] = useState({
@@ -236,10 +253,7 @@ export default function ContactPage() {
               ) : (
                 <form
                   data-netlify="true"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setDone(true);
-                  }}
+                  onSubmit={handleSubmit}
                   className="card"
                   style={{
                     padding: "clamp(18px,4vw,30px)",
@@ -247,7 +261,6 @@ export default function ContactPage() {
                     flexDirection: "column",
                     gap: 20,
                   }}
-                  netlify
                 >
                   <div
                     style={{
