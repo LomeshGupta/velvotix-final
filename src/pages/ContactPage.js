@@ -52,20 +52,28 @@ const INFO = [
 const handleSubmit = async (e) => {
   e.preventDefault();
 
+  const body = new URLSearchParams({
+    "form-name": "contact",
+    name: form.name,
+    email: form.email,
+    company: form.company,
+    region: form.region,
+    timezone: form.timezone,
+    interest: form.interest.join(", "),
+    message: form.message,
+  }).toString();
+
   await fetch("/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: encode({
-      "form-name": "contact",
-      ...form,
-      interest: form.interest.join(", "),
-    }),
+    body,
   });
 
   setDone(true);
 };
+
 export default function ContactPage() {
   const [done, setDone] = useState(false);
   const [form, setForm] = useState({
