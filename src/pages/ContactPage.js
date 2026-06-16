@@ -61,29 +61,45 @@ export default function ContactPage() {
     message: "",
   });
 
+  const GOOGLE_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfKzgUXAir2F1W_TtwqxltdG0pagKpaJgu2_FlAIWnmDZJgjw/formResponse";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const body = new URLSearchParams({
-      "form-name": "contact",
-      name: form.name,
-      email: form.email,
-      company: form.company,
-      region: form.region,
-      timezone: form.timezone,
-      interest: form.interest.join(", "),
-      message: form.message,
-    }).toString();
+    const formData = new FormData();
 
-    await fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body,
-    });
+    formData.append("entry.106724502", form.name);
+    formData.append("entry.69398333", form.email);
+    formData.append("entry.1387778455", form.company);
+    formData.append("entry.1314042137", form.region);
+    formData.append("entry.1490868022", form.timezone);
+    formData.append("entry.1803165878", form.interest.join(", "));
+    formData.append("entry.1111388990", form.message);
 
-    setDone(true);
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
+
+      ```
+setDone(true);
+
+setForm({
+  name: "",
+  email: "",
+  company: "",
+  region: "",
+  timezone: "",
+  interest: [],
+  message: "",
+});
+```;
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
   };
 
   const toggle = (item) =>
