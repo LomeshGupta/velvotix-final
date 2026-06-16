@@ -84,19 +84,17 @@ export default function ContactPage() {
         body: formData,
       });
 
-      ```
-setDone(true);
+      setDone(true);
 
-setForm({
-  name: "",
-  email: "",
-  company: "",
-  region: "",
-  timezone: "",
-  interest: [],
-  message: "",
-});
-```;
+      setForm({
+        name: "",
+        email: "",
+        company: "",
+        region: "",
+        timezone: "",
+        interest: [],
+        message: "",
+      });
     } catch (error) {
       console.error("Form submission error:", error);
     }
