@@ -247,6 +247,7 @@ export default function ContactPage() {
                     flexDirection: "column",
                     gap: 20,
                   }}
+                  netlify
                 >
                   <div
                     style={{
