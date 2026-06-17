@@ -19,7 +19,7 @@ const COLS = [
     links: [
       { label: "Sales App", path: "/products" },
       { label: "SRM Platform", path: "/products" },
-      { label: "Production Mgmt", path: "/products" },
+      { label: "Production Management", path: "/products" },
       { label: "Vendor Portal", path: "/products" },
       { label: "Executive Dashboard", path: "/products" },
     ],
