@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/layout/Layout";
+import ContactSEO from "../meta/contact";
 
 const INTERESTS = [
   "BC Implementation",
@@ -26,7 +27,7 @@ const INFO = [
   {
     icon: "📧",
     label: "Email",
-    value: "projects@velvotix.com",
+    value: "info@velvotix.com",
     color: "#0099FF",
   },
   {
@@ -118,6 +119,7 @@ export default function ContactPage() {
 
   return (
     <Layout>
+      <ContactSEO />
       <section
         style={{
           paddingTop: 100,
