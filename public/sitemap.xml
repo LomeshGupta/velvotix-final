@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://velvotix.com/</loc>
   </url>
+
   <url>
-    <loc>https://velvotix.com/about</loc>
+    <loc>https://velvotix.com/about/</loc>
   </url>
+
   <url>
-    <loc>https://velvotix.com/services</loc>
+    <loc>https://velvotix.com/solutions/</loc>
   </url>
+
   <url>
-    <loc>https://velvotix.com/contact</loc>
+    <loc>https://velvotix.com/services/</loc>
   </url>
+
+  <url>
+    <loc>https://velvotix.com/products/</loc>
+  </url>
+
+  <url>
+    <loc>https://velvotix.com/case-studies/</loc>
+  </url>
+
+  <url>
+    <loc>https://velvotix.com/contact/</loc>
+  </url>
+
 </urlset>
