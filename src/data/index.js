@@ -535,3 +535,294 @@ export const TESTIMONIALS = [
       "The executive dashboard suite gives us real-time supply chain visibility we never had before. ROI was clear within the first quarter of go-live.",
   },
 ];
+
+export const PRIVACY_POLICY = {
+  effectiveDate: "September 7, 2026",
+
+  intro: {
+    title: "Our commitment",
+    text: `
+      Velvotix is committed to handling personal information responsibly and
+      transparently. We collect only the information reasonably required to
+      communicate with you, deliver our services, and operate our business.
+    `,
+  },
+
+  sections: [
+    {
+      number: "01",
+      title: "Information We Collect",
+      paragraphs: [
+        `When you interact with Velvotix, we may collect information that you voluntarily provide to us, including your name, business email address, company name, country or region, timezone, areas of interest, and any information you include in your message or consultation request.`,
+
+        `We may also automatically collect limited technical information when you visit our website, such as browser type, device information, pages visited, approximate location, and general usage information.`,
+      ],
+    },
+
+    {
+      number: "02",
+      title: "How We Use Your Information",
+      paragraphs: [
+        `We use the information we collect to understand your requirements, respond to enquiries, provide consulting or technology services, schedule discussions, and communicate with you about our services.`,
+
+        `We may also use information to improve our website, services, user experience, security, and internal business operations.`,
+
+        `We do not use your personal information for purposes that are incompatible with the reason it was originally collected without appropriate notice or, where required, your consent.`,
+      ],
+    },
+
+    {
+      number: "03",
+      title: "Information Sharing",
+      paragraphs: [
+        `Velvotix does not sell or rent your personal information.`,
+
+        `We may share information with trusted service providers who help us operate our website, manage enquiries, provide business services, or maintain our technology infrastructure. These providers are expected to handle information appropriately and only for the purposes for which it is provided.`,
+
+        `We may also disclose information where required by applicable law, legal process, regulatory requirements, or where reasonably necessary to protect our rights, users, or business.`,
+      ],
+    },
+
+    {
+      number: "04",
+      title: "Google Forms & Third-Party Services",
+      paragraphs: [
+        `Our website may use third-party services to collect and process information submitted through forms. For example, enquiry forms may transmit submitted information to Google Forms or other service providers used by Velvotix.`,
+
+        `These third-party providers may process information according to their own privacy policies and terms. We encourage you to review their policies when interacting with services provided by third parties.`,
+      ],
+    },
+
+    {
+      number: "05",
+      title: "Cookies & Analytics",
+      paragraphs: [
+        `Our website may use cookies, analytics tools, or similar technologies to understand website traffic, remember preferences, improve performance, and understand how visitors interact with our website.`,
+
+        `You can generally control or disable cookies through your browser settings. Disabling certain cookies may affect some website functionality.`,
+      ],
+    },
+
+    {
+      number: "06",
+      title: "Data Security",
+      paragraphs: [
+        `We take reasonable technical and organisational measures to protect personal information against unauthorised access, alteration, disclosure, or destruction.`,
+
+        `However, no method of transmitting or storing information over the internet can be guaranteed to be completely secure. Accordingly, we cannot guarantee absolute security of information transmitted to or through our website.`,
+      ],
+    },
+
+    {
+      number: "07",
+      title: "Data Retention",
+      paragraphs: [
+        `We retain personal information only for as long as reasonably necessary for the purposes described in this policy, including to respond to enquiries, provide services, maintain business records, comply with legal obligations, resolve disputes, and enforce our agreements.`,
+
+        `Retention periods may vary depending on the type of information and the purpose for which it was collected.`,
+      ],
+    },
+
+    {
+      number: "08",
+      title: "Your Privacy Rights",
+      paragraphs: [
+        `Depending on your location and applicable law, you may have rights relating to your personal information, including the right to request access, correction, deletion, restriction, or other applicable forms of control over your information.`,
+
+        `If you would like to exercise an applicable privacy right or ask a question about how your information is handled, please contact us using the details provided below.`,
+      ],
+    },
+
+    {
+      number: "09",
+      title: "International Data Transfers",
+      paragraphs: [
+        `Velvotix works with clients and service providers across multiple regions. As a result, personal information may be processed or stored in countries other than the country in which you are located.`,
+
+        `Where applicable, we take reasonable steps to ensure that international transfers of personal information are handled in accordance with applicable privacy and data-protection requirements.`,
+      ],
+    },
+
+    {
+      number: "10",
+      title: "Children's Privacy",
+      paragraphs: [
+        `Our website and services are intended for businesses and professionals. We do not knowingly collect personal information from children through our website.`,
+      ],
+    },
+
+    {
+      number: "11",
+      title: "Changes to This Policy",
+      paragraphs: [
+        `We may update this Privacy Policy from time to time to reflect changes in our services, technology, legal requirements, or business practices.`,
+
+        `Any updated version will be published on this page with a revised effective date. We encourage you to review this page periodically.`,
+      ],
+    },
+  ],
+
+  contact: {
+    title: "Questions about your privacy?",
+    description:
+      "If you have questions, concerns, or requests regarding this Privacy Policy, please contact our team.",
+    email: "info@velvotix.com",
+  },
+};
+
+export const TERMS_OF_SERVICE = {
+  effectiveDate: "September 7, 2026",
+  intro: {
+    title: "Agreement to Our Terms",
+    text: ` These Terms of Service govern your use of the Velvotix website and the services provided by Velvotix Projects. By accessing our website or engaging our services, you agree to be bound by these terms. `,
+  },
+  sections: [
+    {
+      number: "01",
+      title: "About Velvotix",
+      paragraphs: [
+        `Velvotix Projects provides ERP consulting, implementation, custom development, system integration, modernisation, support, reporting, and related technology services to businesses and organisations.`,
+        `Specific services, deliverables, timelines, fees, and responsibilities may be defined separately in proposals, statements of work, service agreements, purchase orders, or other written agreements.`,
+      ],
+    },
+    {
+      number: "02",
+      title: "Use of Our Website",
+      paragraphs: [
+        `You may use our website for lawful business and informational purposes only.`,
+        `You agree not to misuse the website, attempt to gain unauthorised access to systems or data, interfere with website operation, introduce malicious software, scrape or collect information through automated means without permission, or use the website for fraudulent or unlawful activities.`,
+      ],
+    },
+    {
+      number: "03",
+      title: "Consulting & Professional Services",
+      paragraphs: [
+        `Our consulting and technology services are provided based on the requirements, information, systems, and assumptions agreed with the client.`,
+        `Project scope, deliverables, milestones, dependencies, client responsibilities, fees, payment terms, and acceptance criteria may be specified in a separate written agreement.`,
+        `Any changes to the agreed scope may require additional time, resources, or fees and may be handled through a written change request or revised statement of work.`,
+      ],
+    },
+    {
+      number: "04",
+      title: "Client Responsibilities",
+      paragraphs: [
+        `Clients are responsible for providing accurate and complete information, timely access to relevant systems, appropriate personnel, approvals, decisions, credentials, documentation, and other resources reasonably required to perform the agreed services.`,
+        `Delays caused by missing information, unavailable personnel, third-party systems, infrastructure limitations, or other matters outside our reasonable control may affect project timelines and deliverables.`,
+      ],
+    },
+    {
+      number: "05",
+      title: "Fees & Payments",
+      paragraphs: [
+        `Fees for our services will be communicated through applicable proposals, quotations, statements of work, invoices, or other written agreements.`,
+        `Unless otherwise agreed in writing, invoices are payable according to the payment terms specified on the applicable invoice or agreement.`,
+        `Additional work outside the agreed scope may be billed separately following prior communication with the client.`,
+      ],
+    },
+    {
+      number: "06",
+      title: "Intellectual Property",
+      paragraphs: [
+        `Each party retains ownership of intellectual property that it owned before the engagement.`,
+        `Unless otherwise agreed in writing, Velvotix retains ownership of its pre-existing tools, frameworks, libraries, methodologies, templates, know-how, reusable components, and general technical knowledge used in delivering services.`,
+        `Ownership or licensing of project-specific deliverables will be governed by the applicable agreement between Velvotix and the client.`,
+      ],
+    },
+    {
+      number: "07",
+      title: "Third-Party Services & Systems",
+      paragraphs: [
+        `Our services may involve third-party software, platforms, APIs, hosting providers, payment providers, cloud services, or other external systems.`,
+        `Third-party services are subject to their own terms, availability, pricing, security practices, and policies. Velvotix is not responsible for changes, interruptions, failures, or limitations caused by third-party services outside our reasonable control.`,
+        `Where applicable, clients are responsible for maintaining the necessary licences, subscriptions, permissions, and accounts required to use third-party systems.`,
+      ],
+    },
+    {
+      number: "08",
+      title: "Confidentiality",
+      paragraphs: [
+        `Both parties may receive confidential business, technical, financial, operational, or other non-public information during an engagement.`,
+        `Each party agrees to use reasonable measures to protect confidential information and not disclose it to unauthorised third parties except where required by law or permitted by an applicable agreement.`,
+        `Confidentiality obligations may be further defined in a separate non-disclosure agreement or service agreement.`,
+      ],
+    },
+    {
+      number: "09",
+      title: "Data Protection & Privacy",
+      paragraphs: [
+        `We may process personal information when providing our services or responding to enquiries. Our handling of personal information is described in our Privacy Policy.`,
+        `Where a project involves the processing of personal data on behalf of a client, the parties may enter into additional data-processing terms where required by applicable law.`,
+      ],
+    },
+    {
+      number: "10",
+      title: "Warranties & Disclaimers",
+      paragraphs: [
+        `We aim to provide professional services with reasonable care and skill. However, we do not guarantee that our website, services, software integrations, or third-party systems will always be uninterrupted, error-free, or available.`,
+        `Business, financial, operational, or technical outcomes may depend on factors outside our control, including client decisions, third-party systems, data quality, infrastructure, and implementation conditions.`,
+        `Unless expressly stated in a written agreement, services and website content are provided on an as-available basis and without warranties beyond those that cannot legally be excluded.`,
+      ],
+    },
+    {
+      number: "11",
+      title: "Limitation of Liability",
+      paragraphs: [
+        `To the maximum extent permitted by applicable law, Velvotix will not be liable for indirect, incidental, special, consequential, or punitive losses, including loss of profits, revenue, business opportunities, data, or anticipated savings arising from the use of our website or services.`,
+        `Any liability arising from a specific client engagement will be subject to the applicable written agreement between the parties and any limitations permitted by applicable law.`,
+      ],
+    },
+    {
+      number: "12",
+      title: "Indemnification",
+      paragraphs: [
+        `To the extent permitted by applicable law and any applicable written agreement, each party may be responsible for claims arising from its own unlawful conduct, material breach of its obligations, or infringement of third-party rights.`,
+        `Specific indemnification obligations, if applicable, will be governed by the relevant service agreement or statement of work.`,
+      ],
+    },
+    {
+      number: "13",
+      title: "Suspension & Termination",
+      paragraphs: [
+        `Either party may terminate a service engagement according to the termination provisions contained in the applicable agreement.`,
+        `Velvotix may suspend access to services where reasonably necessary to address security concerns, unlawful activity, non-payment, misuse, or material breaches of applicable terms.`,
+        `Termination will not affect rights or obligations that are intended to survive termination, including applicable payment, confidentiality, intellectual property, liability, and dispute-related provisions.`,
+      ],
+    },
+    {
+      number: "14",
+      title: "Force Majeure",
+      paragraphs: [
+        `Neither party will be responsible for failure or delay in performing obligations caused by circumstances beyond its reasonable control, including natural disasters, war, civil unrest, government action, major infrastructure failures, widespread internet or telecommunications outages, or other events that could not reasonably have been prevented.`,
+      ],
+    },
+    {
+      number: "15",
+      title: "Changes to These Terms",
+      paragraphs: [
+        `We may update these Terms of Service from time to time to reflect changes to our website, services, business practices, or legal requirements.`,
+        `Updated terms will be published on this page with a revised effective date. Continued use of our website after an update constitutes acceptance of the revised terms to the extent permitted by applicable law.`,
+      ],
+    },
+    {
+      number: "16",
+      title: "Governing Law",
+      paragraphs: [
+        `These Terms of Service will be governed by the applicable laws agreed between Velvotix and the relevant client in the applicable service agreement.`,
+        `Where no separate written agreement specifies governing law or jurisdiction, the parties will seek to resolve disputes through good-faith discussion before pursuing other remedies available under applicable law.`,
+      ],
+    },
+    {
+      number: "17",
+      title: "Contact Us",
+      paragraphs: [
+        `If you have questions about these Terms of Service or our services, please contact Velvotix Projects using the contact information below.`,
+      ],
+    },
+  ],
+  contact: {
+    title: "Questions about our terms?",
+    description:
+      "If you have questions about these Terms of Service or our services, our team is happy to help.",
+    email: "info@velvotix.com",
+  },
+};

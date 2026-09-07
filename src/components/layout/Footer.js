@@ -161,7 +161,7 @@ export default function Footer() {
             {/* Contact */}
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <a
-                href="mailto:projects@velvotix.com"
+                href="mailto:Info@velvotix.com"
                 style={{
                   color: "var(--text2)",
                   fontSize: 13.5,
@@ -171,7 +171,7 @@ export default function Footer() {
                   gap: 8,
                 }}
               >
-                <span>📧</span> projects@velvotix.com
+                <span>📧</span> Info@velvotix.com
               </a>
               <span
                 style={{
@@ -232,30 +232,49 @@ export default function Footer() {
             ))}
           </div>
         </div>
-
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24 }}>
           <div className="ft-bottom">
             <p style={{ color: "var(--text3)", fontSize: 12.5, margin: 0 }}>
               © {year} Velvotix Projects. All rights reserved.
             </p>
+
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-              {["Privacy Policy", "Terms of Service"].map((t) => (
-                <Link
-                  key={t}
-                  to="/"
-                  style={{
-                    color: "var(--text3)",
-                    fontSize: 12.5,
-                    textDecoration: "none",
-                    transition: "color .2s",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "var(--text2)")}
-                  onMouseLeave={(e) => (e.target.style.color = "var(--text3)")}
-                >
-                  {t}
-                </Link>
-              ))}
+              <Link
+                to="/privacy-policy"
+                style={{
+                  color: "var(--text3)",
+                  fontSize: 12.5,
+                  textDecoration: "none",
+                  transition: "color .2s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--text2)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--text3)")
+                }
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                to="/terms-of-service"
+                style={{
+                  color: "var(--text3)",
+                  fontSize: 12.5,
+                  textDecoration: "none",
+                  transition: "color .2s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--text2)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--text3)")
+                }
+              >
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>

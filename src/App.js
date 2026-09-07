@@ -14,6 +14,8 @@ import ServicesPage from "./pages/ServicesPage";
 import CaseStudiesPage from "./pages/CaseStudiesPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicy";
+import TermsOfServicePage from "./pages/TermofService";
 import Opayo from "./pages/Opayo";
 import "./styles/index.css";
 
@@ -38,6 +40,8 @@ function AppRoutes() {
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/opayo-success.html" element={<Opayo />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
