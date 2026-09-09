@@ -14,7 +14,7 @@ export default function TermsSEO() {
 
       <meta
         name="keywords"
-        content="Velvotix terms of service, terms and conditions, ERP consulting terms, software consulting agreement, Velvotix Projects"
+        content="Velvotix terms of service, terms and conditions, ERP consulting terms, software consulting agreement, Velvotix Solutions"
       />
 
       <meta name="robots" content="index, follow" />

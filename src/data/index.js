@@ -674,14 +674,14 @@ export const TERMS_OF_SERVICE = {
   effectiveDate: "September 7, 2026",
   intro: {
     title: "Agreement to Our Terms",
-    text: ` These Terms of Service govern your use of the Velvotix website and the services provided by Velvotix Projects. By accessing our website or engaging our services, you agree to be bound by these terms. `,
+    text: ` These Terms of Service govern your use of the Velvotix website and the services provided by Velvotix Solutions. By accessing our website or engaging our services, you agree to be bound by these terms. `,
   },
   sections: [
     {
       number: "01",
       title: "About Velvotix",
       paragraphs: [
-        `Velvotix Projects provides ERP consulting, implementation, custom development, system integration, modernisation, support, reporting, and related technology services to businesses and organisations.`,
+        `Velvotix Solutions provides ERP consulting, implementation, custom development, system integration, modernisation, support, reporting, and related technology services to businesses and organisations.`,
         `Specific services, deliverables, timelines, fees, and responsibilities may be defined separately in proposals, statements of work, service agreements, purchase orders, or other written agreements.`,
       ],
     },
@@ -815,7 +815,7 @@ export const TERMS_OF_SERVICE = {
       number: "17",
       title: "Contact Us",
       paragraphs: [
-        `If you have questions about these Terms of Service or our services, please contact Velvotix Projects using the contact information below.`,
+        `If you have questions about these Terms of Service or our services, please contact Velvotix Solutions using the contact information below.`,
       ],
     },
   ],

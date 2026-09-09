@@ -236,7 +236,7 @@ export default function Footer() {
         <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24 }}>
           <div className="ft-bottom">
             <p style={{ color: "var(--text3)", fontSize: 12.5, margin: 0 }}>
-              © {year} Velvotix Projects. All rights reserved.
+              © {year} Velvotix Solutions LLP. All rights reserved.
             </p>
 
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>

@@ -289,7 +289,7 @@ export default function TermsOfServicePage() {
                 color: "var(--text3)",
               }}
             >
-              © {new Date().getFullYear()} Velvotix Projects. All rights
+              © {new Date().getFullYear()} Velvotix Solutions. All rights
               reserved.
             </div>
           </div>
