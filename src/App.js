@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./lib/ThemeContext";
-import Cursor from "./components/ui/Cursor";
 import HomePage from "./pages/HomePage";
 import SolutionsPage from "./pages/SolutionsPage";
 import ProductsPage from "./pages/ProductsPage";
@@ -17,21 +11,24 @@ import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy";
 import TermsOfServicePage from "./pages/TermofService";
 import Opayo from "./pages/Opayo";
+import SEOServicePage from "./pages/SEOServicePage";
+import InsightsPage from "./pages/InsightsPage";
+import InsightArticlePage from "./pages/InsightArticlePage";
+import NotFoundPage from "./pages/NotFoundPage";
 import "./styles/index.css";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [pathname]);
   return null;
 }
 
-function AppRoutes() {
+export function AppRoutes() {
   return (
     <>
       <ScrollToTop />
-      <Cursor />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/solutions" element={<SolutionsPage />} />
@@ -43,7 +40,21 @@ function AppRoutes() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/opayo-success.html" element={<Opayo />} />
-        <Route path="*" element={<HomePage />} />
+        <Route path="/erp-implementation-partner" element={<SEOServicePage />} />
+        <Route path="/business-central-implementation" element={<SEOServicePage />} />
+        <Route path="/business-central-financial-management" element={<SEOServicePage />} />
+        <Route path="/custom-erp-software" element={<SEOServicePage />} />
+        <Route path="/digital-transformation" element={<SEOServicePage />} />
+        <Route path="/business-central-support" element={<SEOServicePage />} />
+        <Route path="/business-central-development" element={<SEOServicePage />} />
+        <Route path="/business-central-integration-services" element={<SEOServicePage />} />
+        <Route path="/warehouse-management-system" element={<SEOServicePage />} />
+        <Route path="/shop-floor-management-software" element={<SEOServicePage />} />
+        <Route path="/industries/manufacturing-erp" element={<SEOServicePage />} />
+        <Route path="/industries/distribution-erp" element={<SEOServicePage />} />
+        <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/insights/:articleSlug" element={<InsightArticlePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );

@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { SERVICES } from '../../data';
+import { useTheme } from '../../lib/ThemeContext';
+import { themedAccent } from '../../lib/themeAccent';
 
 export default function Services() {
+  const { theme } = useTheme();
   return (
     <section className="sec">
       <div className="wrap">
@@ -19,7 +22,9 @@ export default function Services() {
         </motion.div>
 
         <div className="g-auto-md">
-          {SERVICES.map((s, i) => (
+          {SERVICES.map((s, i) => {
+            const accent = themedAccent(s.color, theme);
+            return (
             <motion.div key={s.id}
               initial={{ opacity:0, y:28 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ delay: i * .06, duration:.5 }}
@@ -27,11 +32,11 @@ export default function Services() {
               <div style={{
                 width:48, height:48, borderRadius:14, display:'flex', alignItems:'center',
                 justifyContent:'center', fontSize:22, marginBottom:16,
-                background:`${s.color}16`,
+                background:`${accent}16`,
               }}>
                 {s.icon}
               </div>
-              <div style={{ fontSize:10.5, fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', color:`${s.color}cc`, marginBottom:6 }}>
+              <div style={{ fontSize:10.5, fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', color:`${accent}cc`, marginBottom:6 }}>
                 {s.sub}
               </div>
               <h3 className="f-display" style={{ fontSize:17, fontWeight:600, color:'var(--text)', marginBottom:10 }}>{s.title}</h3>
@@ -39,12 +44,13 @@ export default function Services() {
               <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
                 {s.tags.map(t => (
                   <span key={t} style={{ display:'flex', alignItems:'center', gap:5, fontSize:12, color:'var(--text2)' }}>
-                    <span style={{ width:4, height:4, borderRadius:'50%', background:s.color, display:'inline-block' }} />{t}
+                    <span style={{ width:4, height:4, borderRadius:'50%', background:accent, display:'inline-block' }} />{t}
                   </span>
                 ))}
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         <div style={{ textAlign:'center', marginTop:40 }}>

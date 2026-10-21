@@ -70,7 +70,7 @@ export default function Navbar() {
                 fontSize: 14,
                 fontWeight: 500,
                 textDecoration: 'none',
-                color: loc.pathname === n.path ? '#0099FF' : 'var(--text2)',
+                color: loc.pathname === n.path ? 'var(--blue)' : 'var(--text2)',
                 background: loc.pathname === n.path ? 'rgba(0,153,255,.09)' : 'transparent',
                 transition: 'color .2s, background .2s',
                 whiteSpace: 'nowrap',
@@ -112,7 +112,7 @@ export default function Navbar() {
                 fontWeight: 600,
                 textDecoration: 'none',
                 color: '#fff',
-                background: 'linear-gradient(135deg,#0099FF,#00C2FF)',
+                background: 'linear-gradient(135deg,var(--blue-gradient-start),var(--blue-gradient-end))',
                 boxShadow: '0 0 18px rgba(0,153,255,.35)',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
@@ -163,7 +163,7 @@ export default function Navbar() {
                 display: 'block',
                 padding: '15px 18px', borderRadius: 14,
                 fontSize: 18, fontWeight: 600, textDecoration: 'none',
-                color: loc.pathname === n.path ? '#0099FF' : 'var(--text)',
+                color: loc.pathname === n.path ? 'var(--blue)' : 'var(--text)',
                 background: loc.pathname === n.path ? 'rgba(0,153,255,.09)' : 'transparent',
               }}
             >
@@ -178,7 +178,7 @@ export default function Navbar() {
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
               width: '100%', padding: '16px', borderRadius: 14,
               fontSize: 16, fontWeight: 700, textDecoration: 'none',
-              color: '#fff', background: 'linear-gradient(135deg,#0099FF,#00C2FF)',
+              color: '#fff', background: 'linear-gradient(135deg,var(--blue-gradient-start),var(--blue-gradient-end))',
               boxShadow: '0 0 24px rgba(0,153,255,.4)',
             }}
           >
@@ -189,7 +189,7 @@ export default function Navbar() {
 
       {/* Responsive show/hide via real <style> — avoids Tailwind purge issues */}
       <style>{`
-        @media (min-width: 768px) {
+        @media (min-width: 1080px) {
           #nav-desktop { display: flex !important; }
           #nav-cta     { display: flex !important; }
           #nav-burger  { display: none !important; }

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import SEOHead from "../components/SEOHead";
 
 const PaymentSuccessful = () => {
   useEffect(() => {
@@ -23,9 +24,10 @@ const PaymentSuccessful = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Payment Successful</h2>
-    </div>
+    <>
+      <SEOHead title="Payment Status | Velvotix" description="Payment response page." path="/opayo-success.html" noIndex />
+      <main style={{ padding: 24 }}><h1>Payment Status</h1><p>This window will close automatically.</p></main>
+    </>
   );
 };
 

@@ -1,16 +1,13 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Particles from '../ui/Particles';
+import React from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-      <Particles />
+    <div className="vtx-app-shell">
+      <a className="vtx-skip-link" href="#main-content">Skip to main content</a>
       <Navbar />
-      <main style={{ flex: 1, position: 'relative', zIndex: 1 }}>
-        {children}
-      </main>
+      <div id="main-content" className="vtx-app-content">{children}</div>
       <Footer />
     </div>
   );

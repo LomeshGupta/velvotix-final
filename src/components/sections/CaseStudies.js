@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CASES } from '../../data';
+import { useTheme } from '../../lib/ThemeContext';
+import { themedAccent } from '../../lib/themeAccent';
 
 export default function CaseStudies() {
+  const { theme } = useTheme();
   return (
     <section className="sec">
       <div className="wrap">
@@ -17,16 +20,18 @@ export default function CaseStudies() {
         </motion.div>
 
         <div className="g-auto-lg">
-          {CASES.map((c, i) => (
+          {CASES.map((c, i) => {
+            const accent = themedAccent(c.color, theme);
+            return (
             <motion.div key={c.id}
               initial={{ opacity:0, y:28 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ delay:i*.1 }}
               className="card" style={{ overflow:'hidden' }}>
-              <div style={{ height:4, background:`linear-gradient(90deg,${c.color},${c.color}44)` }} />
+              <div style={{ height:4, background:`linear-gradient(90deg,${accent},${accent}44)` }} />
               <div style={{ padding:22 }}>
                 <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:16 }}>
                   <div style={{ width:42, height:42, borderRadius:12, display:'flex', alignItems:'center', justifyContent:'center',
-                    fontSize:18, background:`${c.color}14`, flexShrink:0 }}>{c.icon}</div>
+                    fontSize:18, background:`${accent}14`, flexShrink:0 }}>{c.icon}</div>
                   <div>
                     <div style={{ fontSize:11.5, color:'var(--text3)' }}>{c.industry}</div>
                     <div style={{ fontSize:14, fontWeight:600, color:'var(--text)' }}>{c.client}</div>
@@ -37,7 +42,7 @@ export default function CaseStudies() {
                 <div style={{ display:'flex', flexDirection:'column', gap:7, marginBottom:18 }}>
                   {c.results.slice(0,3).map(r => (
                     <div key={r} style={{ display:'flex', alignItems:'flex-start', gap:8 }}>
-                      <span style={{ color:c.color, fontSize:13, flexShrink:0, marginTop:1 }}>✓</span>
+                      <span style={{ color:accent, fontSize:13, flexShrink:0, marginTop:1 }}>✓</span>
                       <span style={{ fontSize:12.5, color:'var(--text2)' }}>{r}</span>
                     </div>
                   ))}
@@ -45,12 +50,13 @@ export default function CaseStudies() {
                 <div style={{ display:'flex', flexWrap:'wrap', gap:6 }}>
                   {c.tags.map(t => (
                     <span key={t} style={{ fontSize:11, padding:'3px 10px', borderRadius:8,
-                      background:`${c.color}0e`, color:`${c.color}cc`, border:`1px solid ${c.color}1e` }}>{t}</span>
+                      background:`${accent}0e`, color:`${accent}cc`, border:`1px solid ${accent}1e` }}>{t}</span>
                   ))}
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

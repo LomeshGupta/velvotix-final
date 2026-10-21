@@ -20,6 +20,7 @@ function MetricCard({ m, i }) {
 }
 
 export default function Metrics() {
+  if (!METRICS.length) return null;
   return (
     <section className="sec" style={{
       background:'linear-gradient(135deg,rgba(0,153,255,.04) 0%,transparent 50%,rgba(255,122,0,.03) 100%)',

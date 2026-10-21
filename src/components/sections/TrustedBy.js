@@ -7,7 +7,7 @@ export default function TrustedBy() {
     <section style={{ padding: '44px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', overflow: 'hidden' }}>
       <div className="wrap" style={{ marginBottom: 22, textAlign: 'center' }}>
         <p style={{ fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--text3)', fontWeight: 600, marginBottom: 14 }}>
-          🌍 Global Reach
+          🏭 Industry-aware delivery
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 8, flexWrap: 'wrap' }}>
           {REGIONS.map(r => (
@@ -45,7 +45,7 @@ export default function TrustedBy() {
 
       <div className="wrap" style={{ marginTop: 20, textAlign: 'center' }}>
         <p style={{ fontSize: 12, color: 'var(--text3)' }}>
-          Trusted by enterprises across manufacturing, trading, distribution &amp; service industries
+          Designed around manufacturing, distribution, trading, supply chain and service workflows
         </p>
       </div>
     </section>

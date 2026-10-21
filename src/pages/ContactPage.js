@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/layout/Layout";
 import ContactSEO from "../meta/contact";
+import { useTheme } from "../lib/ThemeContext";
+import { themedAccent } from "../lib/themeAccent";
 
 const INTERESTS = [
   "BC Implementation",
@@ -11,8 +13,8 @@ const INTERESTS = [
   "ERP Modernisation",
   "Support Retainer",
   "Sales App",
-  "SRM Platform",
-  "Executive Dashboard",
+  "Warehouse Management App",
+  "Shop-floor Management App",
 ];
 const TIMEZONES = [
   "IST (India)",
@@ -28,7 +30,7 @@ const INFO = [
     icon: "📧",
     label: "Email",
     value: "info@velvotix.com",
-    color: "#0099FF",
+    color: "var(--blue)",
   },
   {
     icon: "🌍",
@@ -39,7 +41,7 @@ const INFO = [
   {
     icon: "⏱",
     label: "Response",
-    value: "Within 24 hours guaranteed",
+    value: "Prompt response to enquiries",
     color: "#00D9FF",
   },
   {
@@ -51,6 +53,7 @@ const INFO = [
 ];
 
 export default function ContactPage() {
+  const { theme } = useTheme();
   const [done, setDone] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -163,7 +166,9 @@ export default function ContactPage() {
               transition={{ delay: 0.15 }}
               style={{ display: "flex", flexDirection: "column", gap: 14 }}
             >
-              {INFO.map((item) => (
+              {INFO.map((item) => {
+                const itemAccent = themedAccent(item.color, theme);
+                return (
                 <div
                   key={item.label}
                   className="card"
@@ -183,7 +188,7 @@ export default function ContactPage() {
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 18,
-                      background: `${item.color}14`,
+                      background: `${itemAccent}14`,
                       flexShrink: 0,
                     }}
                   >
@@ -211,7 +216,8 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
               <div
                 className="card"
                 style={{
@@ -225,7 +231,7 @@ export default function ContactPage() {
                   style={{
                     fontSize: 12.5,
                     fontWeight: 600,
-                    color: "#0099FF",
+                    color: "var(--blue)",
                     marginBottom: 8,
                   }}
                 >
@@ -358,7 +364,7 @@ export default function ContactPage() {
                                 : "var(--bg)",
                             border: `1px solid ${form.timezone === tz ? "rgba(0,153,255,.5)" : "var(--border)"}`,
                             color:
-                              form.timezone === tz ? "#0099FF" : "var(--text2)",
+                              form.timezone === tz ? themedAccent("#0099FF", theme) : "var(--text2)",
                             WebkitTapHighlightColor: "transparent",
                           }}
                         >
@@ -390,7 +396,7 @@ export default function ContactPage() {
                                 ? "rgba(255,122,0,.12)"
                                 : "var(--bg)",
                               border: `1px solid ${sel ? "rgba(255,122,0,.42)" : "var(--border)"}`,
-                              color: sel ? "#FF7A00" : "var(--text2)",
+                              color: sel ? themedAccent("#FF7A00", theme) : "var(--text2)",
                               WebkitTapHighlightColor: "transparent",
                             }}
                           >

@@ -1,31 +1,31 @@
 export const NAV = [
   { label: "Solutions", path: "/solutions" },
-  { label: "Products", path: "/products" },
   { label: "Services", path: "/services" },
+  { label: "Products", path: "/products" },
+  { label: "Industries", path: "/industries/manufacturing-erp" },
+  { label: "Insights", path: "/insights" },
   { label: "Case Studies", path: "/case-studies" },
   { label: "About", path: "/about" },
 ];
 
 export const REGIONS = [
-  { flag: "🇮🇳", name: "India", note: "Headquarters & Dev Hub" },
-  { flag: "🇦🇪", name: "UAE", note: "Middle East Operations" },
-  { flag: "🇬🇧", name: "UK", note: "Europe Delivery" },
-  { flag: "🇸🇬", name: "Singapore", note: "Southeast Asia" },
-  { flag: "🇺🇸", name: "USA", note: "North America" },
-  { flag: "🇨🇦", name: "Canada", note: "North America" },
+  { flag: "🇮🇳", name: "India", note: "Core delivery market" },
+  { flag: "🇦🇪", name: "UAE", note: "Remote delivery by agreement" },
+  { flag: "🇬🇧", name: "UK", note: "Remote delivery by agreement" },
+  { flag: "🇸🇬", name: "Singapore", note: "Remote delivery by agreement" },
+  { flag: "🇺🇸", name: "USA", note: "Remote delivery by agreement" },
+  { flag: "🇨🇦", name: "Canada", note: "Remote delivery by agreement" },
 ];
 
 export const MARQUEE_NAMES = [
-  "Consumer Goods Co.",
-  "Manufacturing Co.",
-  "Distribution Ltd",
-  "Trading Corp",
-  "Service Org",
-  "Supply Chain Co.",
-  "Smart Factory",
-  "Global Trader",
-  "ERP Partner",
-  "Tech Enterprise",
+  "Manufacturing",
+  "Distribution & Wholesale",
+  "Trading",
+  "Service Operations",
+  "Supply Chain",
+  "Inventory & Warehousing",
+  "Finance & Operations",
+  "Business Applications",
 ];
 
 export const SERVICES = [
@@ -35,7 +35,7 @@ export const SERVICES = [
     color: "#0099FF",
     sub: "Strategic Implementation",
     title: "ERP Consulting",
-    desc: "Full-lifecycle Business Central implementations — from requirements and process mapping to configuration, data migration, and go-live. Delivered to enterprises across five continents.",
+    desc: "Business Central implementations spanning requirements, process mapping, configuration, data migration, integrations, testing and go-live planning.",
     tags: [
       "BC Implementation",
       "Functional Consulting",
@@ -61,7 +61,7 @@ export const SERVICES = [
     id: "support",
     icon: "🛡️",
     color: "#FF7A00",
-    sub: "Always On, Always Yours",
+    sub: "Dependable Support, Defined Coverage",
     title: "Dedicated Support",
     desc: "Dedicated functional and technical Business Central resources with defined SLAs. Proactive maintenance, monthly updates, user training — your extended ERP team globally.",
     tags: [
@@ -115,111 +115,51 @@ export const PRODUCTS = [
     id: "sales",
     icon: "📈",
     color: "#0099FF",
-    badge: "Most Popular",
-    name: "Sales Intelligence App",
-    tagline: "BC-Integrated Sales Platform",
-    desc: "Real-time inventory, pricing, customer history, and order management — fully synced with Business Central. Built for sales teams who need speed and accuracy.",
+    badge: "Sales workflow",
+    name: "Velvotix Sales App",
+    tagline: "Business Central-connected sales workspace",
+    desc: "A mobile-first workspace for customer lookup, sales orders, customer balances and sales reporting. The app is designed to work with Business Central-backed records through the configured API and permission model.",
     features: [
-      "Real-time BC Sync",
-      "Customer Intelligence",
-      "Order Management",
-      "Pipeline Analytics",
+      "Customer and sales-order workflows",
+      "Order and invoice context",
+      "Mobile-first access",
+      "Business Central API integration",
     ],
   },
   {
-    id: "srm",
-    icon: "🤝",
+    id: "wms",
+    icon: "📦",
     color: "#00C2FF",
-    badge: "Enterprise",
-    name: "Supplier Relationship Management",
-    tagline: "End-to-End Supplier Control",
-    desc: "PO automation, delivery tracking, vendor performance scoring, and a self-service supplier portal — all connected to Business Central in real time.",
+    badge: "Warehouse workflows",
+    name: "Warehouse Management App",
+    tagline: "Receiving, inventory, picking and shipping",
+    desc: "A mobile-first warehouse interface covering core warehouse tasks, with item and inventory views connected to Business Central. Exact bin, reservation and availability behaviour is defined by the configured BC processes.",
     features: [
-      "Vendor Portal",
-      "PO Automation",
-      "Performance Tracking",
-      "BC Integration",
+      "Receiving and item lookup",
+      "Inventory views",
+      "Picking and shipping workflows",
+      "Role-aware access and task navigation",
     ],
   },
   {
-    id: "production",
+    id: "shopfloor",
     icon: "🏭",
     color: "#FF7A00",
-    badge: "Manufacturing",
-    name: "Production Management",
-    tagline: "Smart Manufacturing Control",
-    desc: "Work orders, shop floor control, capacity planning, quality tracking — integrated with BC manufacturing modules for total production visibility.",
+    badge: "Production workflows",
+    name: "Shop-floor Management App",
+    tagline: "Production jobs and operator workflows",
+    desc: "A focused operator experience for viewing active jobs and job-level details. The implementation is shaped around the manufacturing data model, permissions and reporting requirements of the Business Central environment.",
     features: [
-      "Work Order Management",
-      "Shop Floor Control",
-      "Capacity Planning",
-      "Quality Tracking",
-    ],
-  },
-  {
-    id: "supply",
-    icon: "🔗",
-    color: "#00D9FF",
-    badge: null,
-    name: "Supply Chain Suite",
-    tagline: "End-to-End Visibility",
-    desc: "Multi-warehouse inventory, logistics management, supplier network oversight, and demand forecasting — all surfaced from live Business Central data.",
-    features: [
-      "Inventory Tracking",
-      "Logistics Management",
-      "Supplier Network",
-      "Demand Forecasting",
-    ],
-  },
-  {
-    id: "vendor",
-    icon: "🏢",
-    color: "#FF5500",
-    badge: null,
-    name: "Vendor Portal",
-    tagline: "Self-Service Supplier Hub",
-    desc: "Branded portal where vendors submit invoices, check PO status, upload documents, and communicate — synced bidirectionally with Business Central.",
-    features: [
-      "Invoice Submission",
-      "PO Tracking",
-      "Document Upload",
-      "BC Sync",
-    ],
-  },
-  {
-    id: "dashboard",
-    icon: "📊",
-    color: "#0099FF",
-    badge: "New",
-    name: "Executive Dashboard Suite",
-    tagline: "BI Command Centre",
-    desc: "Live KPIs, financial metrics, operational insights, and predictive analytics — pulled directly from Business Central and accessible from anywhere in the world.",
-    features: [
-      "Live BC Data",
-      "Custom KPIs",
-      "Predictive Analytics",
-      "Mobile Ready",
+      "Active-job visibility",
+      "Job and operation detail",
+      "Mobile-friendly operator experience",
+      "Workflow mapping to Business Central",
     ],
   },
 ];
 
-export const METRICS = [
-  {
-    val: 50,
-    suf: "+",
-    label: "Projects Delivered",
-    sub: "Global implementations",
-  },
-  {
-    val: 100,
-    suf: "+",
-    label: "Integrations Built",
-    sub: "API & Azure connections",
-  },
-  { val: 10000, suf: "+", label: "Support Hours", sub: "Dedicated BC support" },
-  { val: 15, suf: "+", label: "ERP Experts", sub: "Certified consultants" },
-  { val: 98, suf: "%", label: "Satisfaction Rate", sub: "Client retention" },
-];
+// Only publish outcome metrics after the team has verified the figures and approved their use.
+export const METRICS = [];
 
 export const CASES = [
   {
@@ -227,7 +167,7 @@ export const CASES = [
     icon: "🏭",
     color: "#0099FF",
     industry: "Manufacturing",
-    client: "Global Manufacturing Enterprise",
+    client: "Illustrative manufacturing scenario",
     title:
       "Business Central implementation and production process modernization",
     body: "A manufacturing organization needed to modernize finance, inventory, purchasing, production and operational reporting while moving toward a more standardized Business Central environment.",
@@ -256,7 +196,7 @@ export const CASES = [
     icon: "📦",
     color: "#FF7A00",
     industry: "Distribution",
-    client: "Distribution & Wholesale Business",
+    client: "Illustrative distribution scenario",
     title:
       "ERP modernization for purchasing, inventory and distribution operations",
     body: "A growing distribution business required a more connected ERP foundation for purchasing, inventory management, sales operations and financial reporting across a growing operational footprint.",
@@ -284,7 +224,7 @@ export const CASES = [
     icon: "🛒",
     color: "#00D9FF",
     industry: "E-commerce",
-    client: "Multi-Channel Commerce Business",
+    client: "Illustrative e-commerce scenario",
     title: "E-commerce and Business Central integration",
     body: "An online commerce operation needed reliable synchronization between its digital sales environment and Business Central so orders, customers, products and operational data could move between systems without repetitive manual processing.",
     results: [
@@ -311,7 +251,7 @@ export const CASES = [
     icon: "🔄",
     color: "#0099FF",
     industry: "ERP Modernization",
-    client: "Legacy ERP Environment",
+    client: "Illustrative NAV modernisation scenario",
     title: "Legacy NAV modernization and transition to Business Central",
     body: "A business operating on a legacy Dynamics NAV environment required a structured path toward modern Business Central architecture while protecting important business processes and historical data.",
     results: [
@@ -339,7 +279,7 @@ export const CASES = [
     icon: "💻",
     color: "#FF7A00",
     industry: "Enterprise Applications",
-    client: "Enterprise Business Application",
+    client: "Illustrative AL development scenario",
     title: "Custom Business Central extensions and AL development",
     body: "An enterprise required functionality beyond standard Business Central capabilities. The engagement focused on designing maintainable extensions and custom workflows while keeping the solution aligned with the Business Central extension model.",
     results: [
@@ -367,7 +307,7 @@ export const CASES = [
     icon: "☁️",
     color: "#00D9FF",
     industry: "Enterprise Integration",
-    client: "Connected Enterprise Environment",
+    client: "Illustrative integration scenario",
     title: "Azure-powered integration architecture for Business Central",
     body: "A business needed Business Central to communicate reliably with external applications and services. The solution focused on creating a scalable integration architecture using Microsoft cloud technologies.",
     results: [
@@ -395,7 +335,7 @@ export const CASES = [
     icon: "🛠️",
     color: "#FF5500",
     industry: "Business Central Support",
-    client: "Growing Business Central Customer",
+    client: "Illustrative support scenario",
     title: "Ongoing functional and technical Business Central support",
     body: "A Business Central customer needed ongoing access to functional and technical expertise after go-live, including issue resolution, updates, testing, user assistance and continuous optimization.",
     results: [
@@ -423,7 +363,7 @@ export const CASES = [
     icon: "🌐",
     color: "#0099FF",
     industry: "Digital Transformation",
-    client: "Enterprise Customer & Vendor Operations",
+    client: "Illustrative portal scenario",
     title: "Modern web portal connected to Business Central",
     body: "An enterprise required a modern digital interface for external stakeholders while maintaining Business Central as the operational system of record.",
     results: [
@@ -451,7 +391,7 @@ export const CASES = [
     icon: "🎓",
     color: "#00D9FF",
     industry: "ERP Adoption",
-    client: "Business Central Implementation Team",
+    client: "Illustrative adoption scenario",
     title: "Business Central training and change enablement",
     body: "Successful ERP adoption requires more than configuration. The engagement focused on helping business users understand new processes, roles and workflows while supporting the transition into the Business Central environment.",
     results: [
@@ -512,29 +452,8 @@ export const PROCESS = [
   },
 ];
 
-export const TESTIMONIALS = [
-  {
-    role: "Operations Director",
-    company: "Consumer Goods Co.",
-    stars: 5,
-    quote:
-      "Velvotix transformed how we manage our dealer network. The custom sales application connected to Business Central has been a game changer for our entire operations team across India.",
-  },
-  {
-    role: "Head of IT",
-    company: "Manufacturing Enterprise",
-    stars: 5,
-    quote:
-      "The technical expertise Velvotix brings to Business Central is exceptional. They understood our manufacturing processes better than any vendor we evaluated.",
-  },
-  {
-    role: "Chief Financial Officer",
-    company: "Distribution Business",
-    stars: 5,
-    quote:
-      "The executive dashboard suite gives us real-time supply chain visibility we never had before. ROI was clear within the first quarter of go-live.",
-  },
-];
+// Do not publish placeholder or unverified customer quotes as testimonials.
+export const TESTIMONIALS = [];
 
 export const PRIVACY_POLICY = {
   effectiveDate: "September 7, 2026",

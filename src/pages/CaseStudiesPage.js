@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import Layout from "../components/layout/Layout";
 import CTASection from "../components/sections/CTASection";
 import { CASES } from "../data";
+import { useTheme } from "../lib/ThemeContext";
+import { themedAccent } from "../lib/themeAccent";
 import CaseStudiesSEO from "../meta/casestudies";
 
 export default function CaseStudiesPage() {
   const [open, setOpen] = useState(null);
+  const { theme } = useTheme();
 
   return (
     <Layout>
@@ -37,16 +40,14 @@ export default function CaseStudiesPage() {
                 marginBottom: 14,
               }}
             >
-              Proven Results Across{" "}
-              <span className="g-blue">Every Industry</span>
+              How we approach{" "}
+              <span className="g-blue">real operational challenges</span>
             </h1>
             <p className="sp" style={{ maxWidth: 580, margin: "0 auto 14px" }}>
-              Every engagement is a story of transformation — from India to the
-              Middle East and beyond.
+              Explore representative ERP, integration and application scenarios to understand our delivery approach, the decisions involved and the kind of outcomes a project should measure.
             </p>
-            <p style={{ fontSize: 12, color: "var(--text3)" }}>
-              🌍 Delivered across South Asia · Middle East · Europe · North
-              America
+            <p style={{ fontSize: 12, color: "var(--text3)", maxWidth: 760, margin: "0 auto" }}>
+              These examples illustrate common solution patterns. They are not independently audited case studies or claims of specific client results. We can publish named case studies and measured outcomes where client permission and verified evidence are available.
             </p>
           </motion.div>
         </div>
@@ -59,6 +60,7 @@ export default function CaseStudiesPage() {
         >
           {CASES.map((c, i) => {
             const isOpen = open === c.id;
+            const color = themedAccent(c.color, theme);
             return (
               <motion.div
                 key={c.id}
@@ -69,16 +71,16 @@ export default function CaseStudiesPage() {
                 className="card"
                 style={{
                   overflow: "hidden",
-                  borderColor: isOpen ? `${c.color}40` : "var(--border)",
+                  borderColor: isOpen ? `${color}40` : "var(--border)",
                   background: isOpen
-                    ? `linear-gradient(135deg,${c.color}0a,transparent)`
+                    ? `linear-gradient(135deg,${color}0a,transparent)`
                     : "var(--card)",
                 }}
               >
                 <div
                   style={{
                     height: 4,
-                    background: `linear-gradient(90deg,${c.color},${c.color}44)`,
+                    background: `linear-gradient(90deg,${color},${color}44)`,
                   }}
                 />
                 <div style={{ padding: "clamp(18px,4vw,28px)" }}>
@@ -101,7 +103,7 @@ export default function CaseStudiesPage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: 20,
-                        background: `${c.color}14`,
+                        background: `${color}14`,
                         flexShrink: 0,
                       }}
                     >
@@ -132,9 +134,9 @@ export default function CaseStudiesPage() {
                         padding: "9px 16px",
                         borderRadius: 11,
                         cursor: "pointer",
-                        background: isOpen ? `${c.color}14` : "var(--card)",
-                        border: `1px solid ${isOpen ? `${c.color}38` : "var(--border)"}`,
-                        color: isOpen ? c.color : "var(--text2)",
+                        background: isOpen ? `${color}14` : "var(--card)",
+                        border: `1px solid ${isOpen ? `${color}38` : "var(--border)"}`,
+                        color: isOpen ? color : "var(--text2)",
                         flexShrink: 0,
                         WebkitTapHighlightColor: "transparent",
                       }}
@@ -196,7 +198,7 @@ export default function CaseStudiesPage() {
                           >
                             <span
                               style={{
-                                color: c.color,
+                                color: color,
                                 fontSize: 13,
                                 flexShrink: 0,
                                 marginTop: 1,
@@ -222,9 +224,9 @@ export default function CaseStudiesPage() {
                               fontSize: 11.5,
                               padding: "4px 12px",
                               borderRadius: 9,
-                              background: `${c.color}0e`,
-                              color: `${c.color}cc`,
-                              border: `1px solid ${c.color}1e`,
+                              background: `${color}0e`,
+                              color: `${color}cc`,
+                              border: `1px solid ${color}1e`,
                             }}
                           >
                             {t}

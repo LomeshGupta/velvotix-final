@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { TESTIMONIALS } from '../../data';
 
 export default function Testimonials() {
+  if (!TESTIMONIALS.length) return null;
   return (
     <section className="sec">
       <div className="wrap">
@@ -19,8 +20,8 @@ export default function Testimonials() {
               viewport={{ once:true }} transition={{ delay:i * .1 }}
               className="card" style={{ padding:26 }}>
               <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:18 }}>
-                <span style={{ fontSize:28, color:'#0099FF', opacity:.35, lineHeight:1 }}>❝</span>
-                <span style={{ color:'#FF7A00', fontSize:13, letterSpacing:2 }}>{'★'.repeat(t.stars)}</span>
+                <span style={{ fontSize:28, color:'var(--blue)', opacity:.35, lineHeight:1 }}>❝</span>
+                <span style={{ color:'var(--oran)', fontSize:13, letterSpacing:2 }}>{'★'.repeat(t.stars)}</span>
               </div>
               <p style={{ fontSize:14, lineHeight:1.78, color:'var(--text2)', fontStyle:'italic', marginBottom:24 }}>
                 "{t.quote}"
@@ -30,13 +31,13 @@ export default function Testimonials() {
                   width:38, height:38, borderRadius:'50%', flexShrink:0,
                   display:'flex', alignItems:'center', justifyContent:'center',
                   fontSize:14, fontWeight:700, color:'#fff',
-                  background:'linear-gradient(135deg,#0099FF,#00C2FF)',
+                  background:'linear-gradient(135deg,var(--blue-gradient-start),var(--blue-gradient-end))',
                 }}>
                   {t.role.charAt(0)}
                 </div>
                 <div>
                   <div style={{ fontSize:14, fontWeight:600, color:'var(--text)' }}>{t.role}</div>
-                  <div style={{ fontSize:12, color:'#0099FF', marginTop:2 }}>{t.company}</div>
+                  <div style={{ fontSize:12, color:'var(--blue)', marginTop:2 }}>{t.company}</div>
                 </div>
               </div>
             </motion.div>

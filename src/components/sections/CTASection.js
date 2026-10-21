@@ -39,8 +39,7 @@ export default function CTASection() {
             </span>
 
             <h2 className="sh f-display" style={{ marginBottom:14 }}>
-              Ready to Transform Your{' '}
-              <span className="g-blue">Business Central?</span>
+              Let's Make Business Central Work Better for Your Business
             </h2>
 
             <p style={{ fontSize:'clamp(14px,2vw,16px)', lineHeight:1.75, color:'var(--text2)',

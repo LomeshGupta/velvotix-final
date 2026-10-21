@@ -37,8 +37,8 @@ export default function Logo({ size = "md" }) {
           userSelect: "none",
         }}
       >
-        <span style={{ color: "#0099FF" }}>VELVO</span>
-        <span style={{ color: "#FF7A00" }}>TIX</span>
+        <span style={{ color: "var(--blue)" }}>VELVO</span>
+        <span style={{ color: "var(--oran)" }}>TIX</span>
       </span>
     </Link>
   );

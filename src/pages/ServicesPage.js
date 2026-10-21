@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Layout from "../components/layout/Layout";
 import CTASection from "../components/sections/CTASection";
 import ServicesSEO from "../meta/services";
+import { useTheme } from "../lib/ThemeContext";
+import { themedAccent } from "../lib/themeAccent";
 
 const TEAM = [
   {
@@ -44,6 +46,19 @@ const TEAM = [
   },
 ];
 
+const DETAIL_LINKS = [
+  { title: "ERP implementation partner", path: "/erp-implementation-partner", text: "Transparent project governance, practical fit-gap decisions and clear ownership." },
+  { title: "Business Central implementation", path: "/business-central-implementation", text: "Process discovery, setup, data migration, testing, training and cutover." },
+  { title: "Financial management system", path: "/business-central-financial-management", text: "Finance structure, posting controls, dimensions, reporting and close processes." },
+  { title: "Business Central development", path: "/business-central-development", text: "AL extensions, reports, workflows and maintainable application changes." },
+  { title: "API & integration services", path: "/business-central-integration-services", text: "Connect ERP data with commerce, warehouse, banking, shipping and custom apps." },
+  { title: "Custom ERP software", path: "/custom-erp-software", text: "Purpose-built business applications where standard capability is not the right fit." },
+  { title: "Warehouse management system", path: "/warehouse-management-system", text: "Mobile receiving, movement, picking, shipping and inventory workflows." },
+  { title: "Shop-floor management software", path: "/shop-floor-management-software", text: "Operator workflows for job status, output, scrap and material reporting." },
+  { title: "Business Central support", path: "/business-central-support", text: "Functional and technical support, release readiness and optimisation." },
+  { title: "Digital transformation", path: "/digital-transformation", text: "A phased roadmap across processes, integrations, data and user adoption." },
+];
+
 const MODELS = [
   {
     name: "Project-Based",
@@ -81,6 +96,7 @@ const MODELS = [
 ];
 
 export default function ServicesPage() {
+  const { theme } = useTheme();
   return (
     <Layout>
       <ServicesSEO />
@@ -113,12 +129,10 @@ export default function ServicesPage() {
               Your Extended <span className="g-blue">ERP Team</span>
             </h1>
             <p className="sp" style={{ maxWidth: 600, margin: "0 auto 12px" }}>
-              Flexible engagement models that give you expert Business Central
-              capability exactly when and how you need it — wherever your
-              business operates.
+              Flexible engagement models for functional, technical and integration work. We agree scope, timezone overlap, responsibilities and support expectations during discovery.
             </p>
             <p style={{ fontSize: 12, color: "var(--text3)" }}>
-              🌍 Remote-first · Globally available · All time zones covered
+              🌍 Remote-first · Coverage agreed per project · Defined deliverables
             </p>
           </motion.div>
         </div>
@@ -128,7 +142,9 @@ export default function ServicesPage() {
         <div className="wrap">
           {/* Team types */}
           <div className="g-auto-md" style={{ marginBottom: 64 }}>
-            {TEAM.map((r, i) => (
+            {TEAM.map((r, i) =>{
+              const accent = themedAccent(r.color, theme);
+              return (
               <motion.div
                 key={r.title}
                 initial={{ opacity: 0, y: 28 }}
@@ -138,8 +154,8 @@ export default function ServicesPage() {
                 className="card"
                 style={{
                   padding: 26,
-                  background: `linear-gradient(135deg,${r.color}08,transparent)`,
-                  borderColor: `${r.color}22`,
+                  background: `linear-gradient(135deg,${accent}08,transparent)`,
+                  borderColor: `${accent}22`,
                 }}
               >
                 <div
@@ -152,7 +168,7 @@ export default function ServicesPage() {
                     justifyContent: "center",
                     fontSize: 24,
                     marginBottom: 18,
-                    background: `${r.color}14`,
+                    background: `${accent}14`,
                   }}
                 >
                   {r.icon}
@@ -192,13 +208,14 @@ export default function ServicesPage() {
                         color: "var(--text2)",
                       }}
                     >
-                      <span style={{ color: r.color }}>✓</span>
+                      <span style={{ color: accent }}>✓</span>
                       {c}
                     </div>
                   ))}
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
 
           {/* Engagement models */}
@@ -217,7 +234,9 @@ export default function ServicesPage() {
           </motion.div>
 
           <div className="g-auto-md">
-            {MODELS.map((m, i) => (
+            {MODELS.map((m, i) =>{
+              const accent = themedAccent(m.color, theme);
+              return (
               <motion.div
                 key={m.name}
                 initial={{ opacity: 0, y: 24 }}
@@ -236,7 +255,7 @@ export default function ServicesPage() {
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: 18,
-                    background: `${m.color}14`,
+                    background: `${accent}14`,
                   }}
                 >
                   <span
@@ -244,7 +263,7 @@ export default function ServicesPage() {
                       width: 12,
                       height: 12,
                       borderRadius: "50%",
-                      background: m.color,
+                      background: accent,
                       display: "block",
                     }}
                   />
@@ -293,7 +312,7 @@ export default function ServicesPage() {
                           width: 5,
                           height: 5,
                           borderRadius: "50%",
-                          background: m.color,
+                          background: accent,
                           display: "block",
                           flexShrink: 0,
                         }}
@@ -304,16 +323,36 @@ export default function ServicesPage() {
                 </div>
                 <Link
                   to="/contact"
-                  style={{ fontSize: 13.5, fontWeight: 600, color: m.color }}
+                  style={{ fontSize: 13.5, fontWeight: 600, color: accent }}
                 >
                   Get a quote →
                 </Link>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
 
+      <section className="vtx-services-directory">
+        <div className="wrap">
+          <div className="vtx-section-heading">
+            <p className="vtx-kicker">INDIVIDUAL SERVICE AREAS</p>
+            <h2>Explore the specific capability you need.</h2>
+            <p>Each service page explains typical scope, important fit-gap questions and the decisions to resolve before a project begins.</p>
+          </div>
+          <div className="vtx-services-directory-grid">
+            {DETAIL_LINKS.map((service, i) => (
+              <Link className="vtx-services-directory-card" to={service.path} key={service.path}>
+                <span>0{(i + 1).toString().slice(-2)}</span>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <strong>Explore service <span aria-hidden="true">↗</span></strong>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       <CTASection />
     </Layout>
   );

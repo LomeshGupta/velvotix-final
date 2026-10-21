@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTheme } from "../../lib/ThemeContext";
 
 /*
   Same Google Form backend used by the Contact Page
@@ -227,6 +228,7 @@ function getLeadLabel(score) {
 }
 
 export default function AIChatbot() {
+  const { theme } = useTheme();
   const [open, setOpen] = useState(false);
   const [showPrompt, setShowPrompt] = useState(true);
 
@@ -661,7 +663,7 @@ Submitted automatically by Velvotix AI Consultant.
               borderRadius: 16,
               background: "var(--bg)",
               border: "1px solid rgba(0,153,255,.25)",
-              boxShadow: "0 12px 35px rgba(0,0,0,.22)",
+              boxShadow: theme === "light" ? "0 10px 30px rgba(25,53,88,.13)" : "0 12px 35px rgba(0,0,0,.22)",
               cursor: "pointer",
             }}
           >
@@ -728,7 +730,7 @@ Submitted automatically by Velvotix AI Consultant.
             height: 62,
             borderRadius: "50%",
             border: "2px solid rgba(255,255,255,.35)",
-            background: "linear-gradient(135deg, #0099FF, #0066FF)",
+            background: theme === "light" ? "linear-gradient(135deg, #0875CC, #087DA8)" : "linear-gradient(135deg, #0099FF, #0066FF)",
             color: "#fff",
             cursor: "pointer",
             boxShadow: "0 10px 30px rgba(0,102,255,.42)",
@@ -819,7 +821,7 @@ Submitted automatically by Velvotix AI Consultant.
               overflow: "hidden",
               background: "var(--bg)",
               border: "1px solid var(--border)",
-              boxShadow: "0 30px 90px rgba(0,0,0,.45)",
+              boxShadow: theme === "light" ? "0 18px 54px rgba(25,53,88,.17)" : "0 30px 90px rgba(0,0,0,.45)",
               display: "flex",
               flexDirection: "column",
             }}
@@ -845,7 +847,7 @@ Submitted automatically by Velvotix AI Consultant.
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  background: "linear-gradient(135deg, #0099FF, #0066FF)",
+                  background: theme === "light" ? "linear-gradient(135deg, #0875CC, #087DA8)" : "linear-gradient(135deg, #0099FF, #0066FF)",
                   color: "#fff",
                   fontSize: 21,
                 }}
@@ -995,7 +997,7 @@ Submitted automatically by Velvotix AI Consultant.
                         borderRadius: 12,
                         border: "1px solid rgba(0,153,255,.3)",
                         background: "rgba(0,153,255,.07)",
-                        color: "#0099FF",
+                        color: "var(--blue)",
                         fontSize: 11.5,
                         cursor: "pointer",
                       }}
@@ -1016,7 +1018,7 @@ Submitted automatically by Velvotix AI Consultant.
                     borderRadius: 11,
                     border: "1px solid rgba(0,153,255,.3)",
                     background: "rgba(0,153,255,.07)",
-                    color: "#0099FF",
+                    color: "var(--blue)",
                     fontSize: 12,
                     cursor: "pointer",
                   }}

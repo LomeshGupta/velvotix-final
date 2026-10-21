@@ -189,7 +189,7 @@ export default function PopupDemoPage() {
                   fontWeight: 700,
                   letterSpacing: ".08em",
                   textTransform: "uppercase",
-                  color: "#0099FF",
+                  color: "var(--blue)",
                   marginBottom: 10,
                 }}
               >

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import ERPOrbit from "../ui/ERPOrbit";
 import { REGIONS } from "../../data";
 import Solution from "../ui/Microsoft-Solution-Partner-.png";
+import { useTheme } from "../../lib/ThemeContext";
+import { themedAccent } from "../../lib/themeAccent";
 
 const up = (i) => ({
   hidden: { opacity: 0, y: 24 },
@@ -15,6 +17,7 @@ const up = (i) => ({
 });
 
 export default function Hero() {
+  const { theme } = useTheme();
   return (
     <section
       style={{
@@ -94,7 +97,7 @@ export default function Hero() {
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "#00D9FF",
+                    background: "var(--glow)",
                     display: "inline-block",
                     marginLeft: 4,
                   }}
@@ -127,9 +130,7 @@ export default function Hero() {
                 maxWidth: 500,
               }}
             >
-              We build intelligent Business Central ecosystems, enterprise
-              applications, integrations, and digital experiences that transform
-              operations — for enterprises worldwide.
+              Velvotix helps businesses implement Microsoft Dynamics 365 Business Central, improve financial and operational processes, and connect ERP with custom applications, APIs, warehouse and shop-floor workflows. We make feasibility, scope, trade-offs and delivery responsibilities clear before committing to a solution.
             </motion.p>
 
             <motion.div
@@ -161,7 +162,7 @@ export default function Hero() {
               }}
             >
               <span style={{ fontSize: 12, color: "var(--text3)" }}>
-                🌍 Clients across
+                🌍 Delivery markets
               </span>
               {REGIONS.slice(0, 5).map((r) => (
                 <span key={r.name} className="pill">
@@ -172,30 +173,10 @@ export default function Hero() {
 
             <motion.div
               variants={up(5)}
-              style={{ display: "flex", gap: 32, marginTop: 24 }}
+              style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 24, maxWidth: 560 }}
             >
-              {[
-                ["50+", "Projects"],
-                ["100+", "Integrations"],
-                ["98%", "Satisfaction"],
-              ].map(([v, l]) => (
-                <div key={l}>
-                  <div
-                    className="f-display g-blue"
-                    style={{ fontSize: 22, fontWeight: 700 }}
-                  >
-                    {v}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 11.5,
-                      color: "var(--text3)",
-                      marginTop: 2,
-                    }}
-                  >
-                    {l}
-                  </div>
-                </div>
+              {["Fit-gap before build", "Transparent scope", "Cross-domain expertise"].map((item) => (
+                <span key={item} className="pill">✓ {item}</span>
               ))}
             </motion.div>
           </motion.div>
@@ -271,7 +252,9 @@ export default function Hero() {
                 value: "5 Regions",
                 color: "#FF7A00",
               },
-            ].map((fc) => (
+            ].map((fc) => {
+              const fcColor = themedAccent(fc.color, theme);
+              return (
               <div
                 key={fc.title}
                 style={{
@@ -280,10 +263,10 @@ export default function Hero() {
                   background: "var(--glass)",
                   backdropFilter: "blur(16px)",
                   WebkitBackdropFilter: "blur(16px)",
-                  border: `1px solid ${fc.color}30`,
+                  border: `1px solid ${fcColor}30`,
                   borderRadius: 14,
                   padding: "10px 14px",
-                  boxShadow: `0 4px 22px ${fc.color}16`,
+                  boxShadow: `0 4px 22px ${fcColor}16`,
                 }}
               >
                 <div style={{ fontSize: 11, color: "var(--text3)" }}>
@@ -293,13 +276,14 @@ export default function Hero() {
                   style={{
                     fontSize: 13,
                     fontWeight: 700,
-                    color: fc.color,
+                    color: fcColor,
                   }}
                 >
                   {fc.value}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </div>

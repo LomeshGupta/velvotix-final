@@ -6,30 +6,34 @@ import Chatbot from "../ui/AIChatbot";
 
 const COLS = [
   {
-    title: "Solutions",
+    title: "Business Central",
     links: [
-      { label: "Business Central", path: "/solutions" },
-      { label: "Custom Development", path: "/solutions" },
-      { label: "ERP Integrations", path: "/solutions" },
-      { label: "ERP Modernisation", path: "/solutions" },
-      { label: "Enterprise Apps", path: "/solutions" },
+      { label: "Implementation", path: "/business-central-implementation" },
+      { label: "Financial Management", path: "/business-central-financial-management" },
+      { label: "AL Development", path: "/business-central-development" },
+      { label: "API & Integration Services", path: "/business-central-integration-services" },
+      { label: "Support & Optimisation", path: "/business-central-support" },
+      { label: "ERP Implementation Partner", path: "/erp-implementation-partner" },
     ],
   },
   {
-    title: "Products",
+    title: "ERP & Digital",
     links: [
-      { label: "Sales App", path: "/products" },
-      { label: "SRM Platform", path: "/products" },
-      { label: "Production Management", path: "/products" },
-      { label: "Vendor Portal", path: "/products" },
-      { label: "Executive Dashboard", path: "/products" },
+      { label: "Custom ERP Software", path: "/custom-erp-software" },
+      { label: "Digital Transformation", path: "/digital-transformation" },
+      { label: "Manufacturing ERP", path: "/industries/manufacturing-erp" },
+      { label: "Distribution ERP", path: "/industries/distribution-erp" },
+      { label: "Warehouse Management System", path: "/warehouse-management-system" },
+      { label: "Shop-Floor Software", path: "/shop-floor-management-software" },
+      { label: "Products", path: "/products" },
     ],
   },
   {
-    title: "Company",
+    title: "Explore",
     links: [
-      { label: "About Us", path: "/about" },
+      { label: "Insights & Guides", path: "/insights" },
       { label: "Case Studies", path: "/case-studies" },
+      { label: "About Velvotix", path: "/about" },
       { label: "Services", path: "/services" },
       { label: "Contact", path: "/contact" },
     ],
@@ -125,9 +129,7 @@ export default function Footer() {
                   maxWidth: 300,
                 }}
               >
-                Transforming ERP into intelligent digital experiences. Business
-                Central consulting, development and support for enterprises
-                worldwide.
+                Business Central consulting, ERP implementation, integration engineering and connected applications, with transparent scope and practical delivery choices.
               </p>
 
               {/* Region pills */}
@@ -138,7 +140,7 @@ export default function Footer() {
                   marginBottom: 10,
                 }}
               >
-                🌍 Serving clients in
+                🌍 Delivery markets
               </p>
               <div
                 style={{
@@ -160,7 +162,7 @@ export default function Footer() {
                       fontSize: 12,
                       fontWeight: 500,
                       background: "rgba(0,153,255,.09)",
-                      color: "#0099FF",
+                      color: "var(--blue)",
                       border: "1px solid rgba(0,153,255,.2)",
                     }}
                   >

@@ -5,9 +5,13 @@ import Layout from "../components/layout/Layout";
 import CTASection from "../components/sections/CTASection";
 import { PRODUCTS } from "../data";
 import ProductsSEO from "../meta/products";
+import ProductGallery from "../components/ProductGallery";
+import { useTheme } from "../lib/ThemeContext";
+import { themedAccent } from "../lib/themeAccent";
 
 export default function ProductsPage() {
   const [open, setOpen] = useState(null);
+  const { theme } = useTheme();
 
   return (
     <Layout>
@@ -38,12 +42,10 @@ export default function ProductsPage() {
                 marginBottom: 14,
               }}
             >
-              Enterprise Modules, <span className="g-orange">Built for BC</span>
+              Connected Applications, <span className="g-orange">Built around BC</span>
             </h1>
             <p className="sp" style={{ maxWidth: 620, margin: "0 auto 20px" }}>
-              Production-ready applications that extend Business Central with
-              intuitive web interfaces, intelligent automation, and real-time
-              data sync — deployed for enterprises worldwide.
+              Explore the Sales App, warehouse management and shop-floor interfaces built around Business Central workflows. Connectivity, data freshness, permissions and performance are validated against the target environment and usage pattern.
             </p>
             <div
               style={{
@@ -54,9 +56,9 @@ export default function ProductsPage() {
               }}
             >
               <span style={{ fontSize: 12, color: "var(--text3)" }}>
-                🌍 Used by enterprises in
+                Application areas
               </span>
-              {["India", "UAE", "UK", "Singapore", "USA"].map((c) => (
+              {["Sales workflows", "Warehouse operations", "Shop-floor execution"].map((c) => (
                 <span key={c} className="pill" style={{ fontSize: 11.5 }}>
                   {c}
                 </span>
@@ -71,6 +73,7 @@ export default function ProductsPage() {
           <div className="g-auto-lg">
             {PRODUCTS.map((p, i) => {
               const isOpen = open === p.id;
+              const color = themedAccent(p.color, theme);
               return (
                 <motion.div
                   key={p.id}
@@ -82,11 +85,11 @@ export default function ProductsPage() {
                   style={{
                     overflow: "hidden",
                     position: "relative",
-                    borderColor: isOpen ? `${p.color}50` : "var(--border)",
+                    borderColor: isOpen ? `${color}50` : "var(--border)",
                     background: isOpen
-                      ? `linear-gradient(135deg,${p.color}10,${p.color}05)`
+                      ? `linear-gradient(135deg,${color}10,${color}05)`
                       : "var(--card)",
-                    boxShadow: isOpen ? `0 14px 44px ${p.color}14` : "none",
+                    boxShadow: isOpen ? `0 14px 44px ${color}14` : "none",
                     transform: isOpen ? "translateY(-2px)" : "none",
                   }}
                 >
@@ -100,8 +103,8 @@ export default function ProductsPage() {
                         borderRadius: 99,
                         fontSize: 11,
                         fontWeight: 600,
-                        background: `${p.color}1a`,
-                        color: p.color,
+                        background: `${color}1a`,
+                        color: color,
                         zIndex: 1,
                       }}
                     >
@@ -111,7 +114,7 @@ export default function ProductsPage() {
                   <div
                     style={{
                       height: 4,
-                      background: `linear-gradient(90deg,${p.color},${p.color}55)`,
+                      background: `linear-gradient(90deg,${color},${color}55)`,
                     }}
                   />
                   <div style={{ padding: "22px 22px 20px" }}>
@@ -125,7 +128,7 @@ export default function ProductsPage() {
                         justifyContent: "center",
                         fontSize: 22,
                         marginBottom: 16,
-                        background: `${p.color}14`,
+                        background: `${color}14`,
                       }}
                     >
                       {p.icon}
@@ -145,7 +148,7 @@ export default function ProductsPage() {
                       style={{
                         fontSize: 12,
                         fontWeight: 600,
-                        color: p.color,
+                        color: color,
                         marginBottom: 12,
                       }}
                     >
@@ -188,7 +191,7 @@ export default function ProductsPage() {
                                   fontSize: 13.5,
                                 }}
                               >
-                                <span style={{ color: p.color, flexShrink: 0 }}>
+                                <span style={{ color: color, flexShrink: 0 }}>
                                   ✓
                                 </span>
                                 <span style={{ color: "var(--text2)" }}>
@@ -215,7 +218,7 @@ export default function ProductsPage() {
                         style={{
                           fontSize: 13,
                           fontWeight: 600,
-                          color: p.color,
+                          color: color,
                           background: "none",
                           border: "none",
                           cursor: "pointer",
@@ -235,9 +238,9 @@ export default function ProductsPage() {
                           padding: "7px 14px",
                           borderRadius: 10,
                           fontWeight: 500,
-                          background: `${p.color}12`,
-                          color: p.color,
-                          border: `1px solid ${p.color}28`,
+                          background: `${color}12`,
+                          color: color,
+                          border: `1px solid ${color}28`,
                         }}
                       >
                         Request Demo
@@ -271,7 +274,7 @@ export default function ProductsPage() {
                 marginBottom: 10,
               }}
             >
-              All Products Integrate Natively with Business Central
+              Designed for direct Business Central connectivity
             </div>
             <p
               style={{
@@ -282,14 +285,13 @@ export default function ProductsPage() {
                 lineHeight: 1.72,
               }}
             >
-              Every module we build syncs bidirectionally with BC in real time.
-              No manual data entry. No duplicate records. One source of truth —
-              accessible from anywhere in the world.
+              The Sales, warehouse and shop-floor workflows shown here are designed around Business Central data and supported integration patterns. We plan request volume, permissions, status feedback and recovery controls as part of the design. Exact freshness and transaction behaviour are validated against each customer’s environment, APIs and workload.
             </p>
           </motion.div>
         </div>
       </section>
 
+      <ProductGallery />
       <CTASection />
     </Layout>
   );

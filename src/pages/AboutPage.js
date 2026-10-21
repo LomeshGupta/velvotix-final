@@ -4,6 +4,8 @@ import Layout from "../components/layout/Layout";
 import CTASection from "../components/sections/CTASection";
 import { REGIONS } from "../data";
 import AboutSEO from "../meta/about";
+import { useTheme } from "../lib/ThemeContext";
+import { themedAccent } from "../lib/themeAccent";
 
 const VALUES = [
   {
@@ -28,7 +30,7 @@ const VALUES = [
     icon: "❤️",
     color: "#FF5500",
     title: "Long Partnerships",
-    desc: "We measure success in years, not projects. Most clients have been with us since day one.",
+    desc: "We aim to build long-term relationships through clear ownership, documentation, support and knowledge transfer beyond launch.",
   },
 ];
 
@@ -37,7 +39,7 @@ const TEAM = [
     icon: "👔",
     color: "#0099FF",
     title: "Functional Consultants",
-    desc: "Domain experts in manufacturing, trading, distribution and services — certified and deployable globally.",
+    desc: "Experienced functional resources across manufacturing, trading, distribution and service processes, matched to the agreed project scope.",
     items: [
       "BC Functional Setup",
       "Process Mapping",
@@ -49,7 +51,7 @@ const TEAM = [
     icon: "💻",
     color: "#FF7A00",
     title: "Technical Consultants",
-    desc: "AL developers, integration architects, and full-stack engineers building production-grade BC extensions and enterprise apps.",
+    desc: "Experienced AL developers, integration specialists and full-stack engineers working across Business Central extensions, APIs and enterprise applications.",
     items: [
       "AL Development",
       "API Architecture",
@@ -61,7 +63,7 @@ const TEAM = [
     icon: "👥",
     color: "#00D9FF",
     title: "Dedicated Teams",
-    desc: "Full embedded teams or individual augmentation — flexible models that scale with your needs across time zones.",
+    desc: "Dedicated teams or individual specialists with clear responsibilities, delivery cadence and knowledge-transfer expectations.",
     items: [
       "Full Project Teams",
       "Resource Augmentation",
@@ -72,6 +74,7 @@ const TEAM = [
 ];
 
 export default function AboutPage() {
+  const { theme } = useTheme();
   return (
     <Layout>
       <AboutSEO />
@@ -105,11 +108,7 @@ export default function AboutPage() {
               <span className="g-blue">Built for Enterprises</span>
             </h1>
             <p className="sp" style={{ maxWidth: 760, margin: "0 auto" }}>
-              Velvotix is a specialised Business Central consultancy and
-              development studio. We deliver ERP implementations, custom
-              applications, and integrations for enterprises across five
-              continents — with the precision of a boutique firm and the
-              capability of a global partner.
+              Velvotix is a Business Central consultancy and application delivery studio. Our work combines ERP functional and technical capability with API integration, web and mobile applications, warehouse workflows and shop-floor processes. Since launch, we have continued to broaden the range of problems we can assess and solve—while keeping feasibility, scope and trade-offs visible to the customer.
             </p>
           </motion.div>
         </div>
@@ -167,7 +166,7 @@ export default function AboutPage() {
               className="badge badge-b"
               style={{ marginBottom: 12, display: "inline-flex" }}
             >
-              🌍 Global Presence
+              🌍 Delivery coverage
             </span>
             <h2
               className="f-display"
@@ -178,7 +177,7 @@ export default function AboutPage() {
                 marginBottom: 8,
               }}
             >
-              Remote-First, Globally Available
+              Remote-First Delivery
             </h2>
             <p
               style={{
@@ -188,9 +187,7 @@ export default function AboutPage() {
                 lineHeight: 1.72,
               }}
             >
-              Our team is distributed across time zones so we're always present
-              when you need us — whether you're closing a quarter in London or
-              opening a warehouse in Singapore.
+              We work with clients through remote-first delivery where the engagement, time-zone overlap, local requirements and support coverage are agreed at the start of the project.
             </p>
           </motion.div>
           <div className="g-auto-xs">
@@ -245,7 +242,9 @@ export default function AboutPage() {
             </h2>
           </motion.div>
           <div className="g-auto-sm">
-            {VALUES.map((v, i) => (
+            {VALUES.map((v, i) =>{
+              const accent = themedAccent(v.color, theme);
+              return (
               <motion.div
                 key={v.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -265,7 +264,7 @@ export default function AboutPage() {
                     justifyContent: "center",
                     fontSize: 20,
                     marginBottom: 14,
-                    background: `${v.color}14`,
+                    background: `${accent}14`,
                   }}
                 >
                   {v.icon}
@@ -290,7 +289,8 @@ export default function AboutPage() {
                   {v.desc}
                 </p>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -316,12 +316,14 @@ export default function AboutPage() {
               Our People
             </h2>
             <p style={{ color: "var(--text2)", fontSize: 14 }}>
-              Certified consultants, seasoned developers, and dedicated support
+              Experienced functional consultants, developers, and dedicated support
               specialists.
             </p>
           </motion.div>
           <div className="g-auto-md">
-            {TEAM.map((r, i) => (
+            {TEAM.map((r, i) =>{
+              const accent = themedAccent(r.color, theme);
+              return (
               <motion.div
                 key={r.title}
                 initial={{ opacity: 0, y: 22 }}
@@ -331,8 +333,8 @@ export default function AboutPage() {
                 className="card"
                 style={{
                   padding: 26,
-                  background: `linear-gradient(135deg,${r.color}08,transparent)`,
-                  borderColor: `${r.color}22`,
+                  background: `linear-gradient(135deg,${accent}08,transparent)`,
+                  borderColor: `${accent}22`,
                 }}
               >
                 <div
@@ -345,7 +347,7 @@ export default function AboutPage() {
                     justifyContent: "center",
                     fontSize: 23,
                     marginBottom: 16,
-                    background: `${r.color}14`,
+                    background: `${accent}14`,
                   }}
                 >
                   {r.icon}
@@ -385,13 +387,14 @@ export default function AboutPage() {
                         color: "var(--text2)",
                       }}
                     >
-                      <span style={{ color: r.color }}>✓</span>
+                      <span style={{ color: accent }}>✓</span>
                       {c}
                     </div>
                   ))}
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

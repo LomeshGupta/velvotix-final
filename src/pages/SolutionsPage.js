@@ -5,6 +5,8 @@ import Layout from "../components/layout/Layout";
 import CTASection from "../components/sections/CTASection";
 import { SERVICES } from "../data";
 import SolutionsSEO from "../meta/solutions";
+import { useTheme } from "../lib/ThemeContext";
+import { themedAccent } from "../lib/themeAccent";
 
 const DETAIL = {
   consulting: {
@@ -89,7 +91,9 @@ const DETAIL = {
 
 export default function SolutionsPage() {
   const [activeId, setActiveId] = useState("consulting");
+  const { theme } = useTheme();
   const active = SERVICES.find((s) => s.id === activeId);
+  const activeColor = active ? themedAccent(active.color, theme) : "var(--blue)";
   const detail = DETAIL[activeId];
 
   return (
@@ -127,7 +131,7 @@ export default function SolutionsPage() {
             </h1>
             <p className="sp" style={{ maxWidth: 580, margin: "0 auto" }}>
               From implementation to ongoing support — everything your
-              enterprise needs to run Business Central at its best, delivered
+              enterprise needs to run Business Central reliably, delivered
               globally.
             </p>
           </motion.div>
@@ -152,6 +156,7 @@ export default function SolutionsPage() {
               >
                 {SERVICES.map((s) => {
                   const isA = activeId === s.id;
+                  const serviceAccent = themedAccent(s.color, theme);
                   return (
                     <button
                       key={s.id}
@@ -165,8 +170,8 @@ export default function SolutionsPage() {
                         cursor: "pointer",
                         flexShrink: 0,
                         whiteSpace: "nowrap",
-                        border: `1px solid ${isA ? s.color + "40" : "transparent"}`,
-                        background: isA ? `${s.color}10` : "transparent",
+                        border: `1px solid ${isA ? serviceAccent + "40" : "transparent"}`,
+                        background: isA ? `${serviceAccent}10` : "transparent",
                         WebkitTapHighlightColor: "transparent",
                       }}
                     >
@@ -198,8 +203,8 @@ export default function SolutionsPage() {
                   style={{
                     borderRadius: 20,
                     padding: "clamp(22px,4vw,40px)",
-                    border: `1px solid ${active.color}25`,
-                    background: `linear-gradient(135deg,${active.color}08,transparent 55%)`,
+                    border: `1px solid ${activeColor}25`,
+                    background: `linear-gradient(135deg,${activeColor}08,transparent 55%)`,
                   }}
                 >
                   <div
@@ -219,7 +224,7 @@ export default function SolutionsPage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: 24,
-                        background: `${active.color}18`,
+                        background: `${activeColor}18`,
                         flexShrink: 0,
                       }}
                     >
@@ -230,7 +235,7 @@ export default function SolutionsPage() {
                         style={{
                           fontSize: 12.5,
                           fontWeight: 600,
-                          color: active.color,
+                          color: activeColor,
                           marginBottom: 4,
                         }}
                       >
@@ -290,7 +295,7 @@ export default function SolutionsPage() {
                       >
                         <span
                           style={{
-                            color: active.color,
+                            color: activeColor,
                             fontSize: 14,
                             flexShrink: 0,
                             marginTop: 1,
@@ -326,9 +331,9 @@ export default function SolutionsPage() {
                             borderRadius: 10,
                             fontSize: 12.5,
                             fontWeight: 500,
-                            background: `${active.color}10`,
-                            color: active.color,
-                            border: `1px solid ${active.color}22`,
+                            background: `${activeColor}10`,
+                            color: activeColor,
+                            border: `1px solid ${activeColor}22`,
                           }}
                         >
                           {ind}
@@ -347,8 +352,8 @@ export default function SolutionsPage() {
                       to="/contact"
                       className="btn btn-blue"
                       style={{
-                        background: `linear-gradient(135deg,${active.color},${active.color}cc)`,
-                        boxShadow: `0 4px 18px ${active.color}35`,
+                        background: `linear-gradient(135deg,${activeColor},${activeColor}cc)`,
+                        boxShadow: `0 4px 18px ${activeColor}35`,
                       }}
                     >
                       Get Started →
