@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://velvotix.com/sitemap.xml

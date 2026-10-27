@@ -181,11 +181,10 @@ export default function CaseStudiesPage() {
                       <div
                         style={{
                           display: "grid",
-                          gridTemplateColumns: "1fr",
                           gap: 9,
                           marginBottom: 18,
                         }}
-                        className="sm:grid-cols-2"
+                        className="case-study-results-grid"
                       >
                         {c.results.map((r) => (
                           <div

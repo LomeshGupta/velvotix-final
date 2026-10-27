@@ -187,12 +187,11 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
               position: "relative",
             }}
-            className="hidden sm:flex"
+            className="hero-orbit"
           >
             <div
               style={{

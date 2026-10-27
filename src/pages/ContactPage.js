@@ -295,10 +295,9 @@ export default function ContactPage() {
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: "1fr",
                       gap: 16,
                     }}
-                    className="sm:grid-cols-2"
+                    className="contact-form-grid"
                   >
                     {[
                       {

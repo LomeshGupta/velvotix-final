@@ -92,280 +92,117 @@ const DETAIL = {
 export default function SolutionsPage() {
   const [activeId, setActiveId] = useState("consulting");
   const { theme } = useTheme();
-  const active = SERVICES.find((s) => s.id === activeId);
+  const active = SERVICES.find((service) => service.id === activeId);
   const activeColor = active ? themedAccent(active.color, theme) : "var(--blue)";
   const detail = DETAIL[activeId];
 
   return (
     <Layout>
       <SolutionsSEO />
-      {/* Hero */}
-      <section
-        style={{
-          paddingTop: 100,
-          paddingBottom: 48,
-          background:
-            "radial-gradient(ellipse 80% 50% at 50% 0%,rgba(0,153,255,.1) 0%,transparent 60%)",
-        }}
-      >
-        <div className="wrap" style={{ textAlign: "center" }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <span
-              className="badge badge-b"
-              style={{ marginBottom: 16, display: "inline-flex" }}
-            >
-              Solutions
-            </span>
-            <h1
-              className="sh f-display"
-              style={{
-                fontSize: "clamp(1.9rem,4.5vw,3.2rem)",
-                marginBottom: 14,
-              }}
-            >
-              Complete Business Central{" "}
-              <span className="g-blue">Solutions</span>
-            </h1>
-            <p className="sp" style={{ maxWidth: 580, margin: "0 auto" }}>
-              From implementation to ongoing support — everything your
-              enterprise needs to run Business Central reliably, delivered
-              globally.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="sec" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <div className="g-solutions">
-            {/* Sidebar — horizontal scroll on mobile */}
-            <div style={{ position: "sticky", top: 80, alignSelf: "start" }}>
-              <div
-                style={{
-                  display: "flex",
-                  gap: 6,
-                  overflowX: "auto",
-                  paddingBottom: 4,
-                  WebkitOverflowScrolling: "touch",
-                  scrollbarWidth: "none",
-                }}
-                className="lg:flex-col lg:overflow-visible"
-              >
-                {SERVICES.map((s) => {
-                  const isA = activeId === s.id;
-                  const serviceAccent = themedAccent(s.color, theme);
-                  return (
-                    <button
-                      key={s.id}
-                      onClick={() => setActiveId(s.id)}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 10,
-                        padding: "11px 14px",
-                        borderRadius: 12,
-                        cursor: "pointer",
-                        flexShrink: 0,
-                        whiteSpace: "nowrap",
-                        border: `1px solid ${isA ? serviceAccent + "40" : "transparent"}`,
-                        background: isA ? `${serviceAccent}10` : "transparent",
-                        WebkitTapHighlightColor: "transparent",
-                      }}
-                    >
-                      <span style={{ fontSize: 18 }}>{s.icon}</span>
-                      <span
-                        style={{
-                          fontSize: 13.5,
-                          fontWeight: 500,
-                          color: isA ? "var(--text)" : "var(--text2)",
-                        }}
-                      >
-                        {s.title}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Detail */}
+      <main className="solutions-page">
+        <section className="solutions-hero">
+          <div className="wrap solutions-hero-inner">
             <motion.div
-              key={activeId}
-              initial={{ opacity: 0, x: 16 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.32 }}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
             >
-              {active && detail && (
-                <div
-                  style={{
-                    borderRadius: 20,
-                    padding: "clamp(22px,4vw,40px)",
-                    border: `1px solid ${activeColor}25`,
-                    background: `linear-gradient(135deg,${activeColor}08,transparent 55%)`,
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 16,
-                      marginBottom: 22,
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 54,
-                        height: 54,
-                        borderRadius: 16,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: 24,
-                        background: `${activeColor}18`,
-                        flexShrink: 0,
-                      }}
-                    >
-                      {active.icon}
-                    </div>
-                    <div>
-                      <div
-                        style={{
-                          fontSize: 12.5,
-                          fontWeight: 600,
-                          color: activeColor,
-                          marginBottom: 4,
-                        }}
-                      >
-                        {active.sub}
-                      </div>
-                      <h2
-                        className="f-display"
-                        style={{
-                          fontSize: "clamp(1.2rem,2.6vw,1.7rem)",
-                          fontWeight: 700,
-                          color: "var(--text)",
-                        }}
-                      >
-                        {active.title}
-                      </h2>
-                    </div>
-                  </div>
-
-                  <p
-                    style={{
-                      fontSize: 14.5,
-                      lineHeight: 1.75,
-                      color: "var(--text2)",
-                      marginBottom: 26,
-                    }}
-                  >
-                    {active.desc}
-                  </p>
-
-                  <h3
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: "var(--text)",
-                      marginBottom: 14,
-                    }}
-                  >
-                    What's included:
-                  </h3>
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr",
-                      gap: 10,
-                      marginBottom: 26,
-                    }}
-                    className="sm:grid-cols-2"
-                  >
-                    {detail.items.map((d) => (
-                      <div
-                        key={d}
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-start",
-                          gap: 9,
-                        }}
-                      >
-                        <span
-                          style={{
-                            color: activeColor,
-                            fontSize: 14,
-                            flexShrink: 0,
-                            marginTop: 1,
-                          }}
-                        >
-                          ✓
-                        </span>
-                        <span style={{ fontSize: 13.5, color: "var(--text2)" }}>
-                          {d}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div style={{ marginBottom: 26 }}>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        letterSpacing: ".1em",
-                        textTransform: "uppercase",
-                        color: "var(--text3)",
-                        marginBottom: 10,
-                      }}
-                    >
-                      Industries
-                    </div>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                      {detail.industries.map((ind) => (
-                        <span
-                          key={ind}
-                          style={{
-                            padding: "5px 14px",
-                            borderRadius: 10,
-                            fontSize: 12.5,
-                            fontWeight: 500,
-                            background: `${activeColor}10`,
-                            color: activeColor,
-                            border: `1px solid ${activeColor}22`,
-                          }}
-                        >
-                          {ind}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div
-                    style={{
-                      borderTop: "1px solid var(--border)",
-                      paddingTop: 22,
-                    }}
-                  >
-                    <Link
-                      to="/contact"
-                      className="btn btn-blue"
-                      style={{
-                        background: `linear-gradient(135deg,${activeColor},${activeColor}cc)`,
-                        boxShadow: `0 4px 18px ${activeColor}35`,
-                      }}
-                    >
-                      Get Started →
-                    </Link>
-                  </div>
-                </div>
-              )}
+              <span className="badge badge-b solutions-eyebrow">Solutions</span>
+              <h1 className="sh f-display solutions-title">
+                Complete Business Central <span className="g-blue">Solutions</span>
+              </h1>
+              <p className="sp solutions-intro">
+                From implementation to ongoing support — practical ERP, integration and application services shaped around how your business works.
+              </p>
             </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
+        <section className="solutions-section sec">
+          <div className="wrap">
+            <div className="solutions-layout">
+              <nav className="solutions-nav-shell" aria-label="Solution categories">
+                <p className="solutions-nav-label">Explore capabilities</p>
+                <div className="solutions-tabs" role="group" aria-label="Solution areas">
+                  {SERVICES.map((service) => {
+                    const isActive = activeId === service.id;
+                    const serviceAccent = themedAccent(service.color, theme);
+                    return (
+                      <button
+                        key={service.id}
+                        id={`solution-tab-${service.id}`}
+                        type="button"
+                        aria-pressed={isActive}
+                        aria-controls="solution-panel"
+                        onClick={() => setActiveId(service.id)}
+                        className={`solutions-tab${isActive ? " is-active" : ""}`}
+                        style={{ "--solution-accent": serviceAccent }}
+                      >
+                        <span className="solutions-tab-icon" aria-hidden="true">{service.icon}</span>
+                        <span className="solutions-tab-label">{service.title}</span>
+                        <span className="solutions-tab-arrow" aria-hidden="true">→</span>
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="solutions-swipe-hint">Swipe to explore <span aria-hidden="true">→</span></p>
+              </nav>
+
+              {active && detail && (
+                <motion.article
+                  key={activeId}
+                  id="solution-panel"
+                  aria-labelledby={`solution-tab-${activeId}`}
+                  aria-live="polite"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.24 }}
+                  className="solutions-detail-card"
+                  style={{ "--solution-accent": activeColor }}
+                >
+                  <header className="solutions-detail-header">
+                    <div className="solutions-detail-icon" aria-hidden="true">{active.icon}</div>
+                    <div className="solutions-detail-heading">
+                      <p className="solutions-detail-subtitle">{active.sub}</p>
+                      <h2 className="f-display">{active.title}</h2>
+                    </div>
+                  </header>
+
+                  <p className="solutions-detail-description">{active.desc}</p>
+
+                  <section className="solutions-includes" aria-labelledby="solutions-includes-heading">
+                    <h3 id="solutions-includes-heading">What’s included</h3>
+                    <div className="solutions-includes-grid">
+                      {detail.items.map((item) => (
+                        <div className="solutions-include-item" key={item}>
+                          <span className="solutions-check" aria-hidden="true">✓</span>
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section className="solutions-industries" aria-labelledby="solutions-industries-heading">
+                    <h3 id="solutions-industries-heading">Industries and workflows</h3>
+                    <div className="solutions-industry-list">
+                      {detail.industries.map((industry) => (
+                        <span className="solutions-industry-chip" key={industry}>{industry}</span>
+                      ))}
+                    </div>
+                  </section>
+
+                  <div className="solutions-detail-actions">
+                    <Link to="/contact" className="btn btn-blue solutions-cta">
+                      Discuss your requirements <span aria-hidden="true">→</span>
+                    </Link>
+                    <span className="solutions-cta-note">Scope and feasibility discussed before commitment.</span>
+                  </div>
+                </motion.article>
+              )}
+            </div>
+          </div>
+        </section>
+      </main>
       <CTASection />
     </Layout>
   );
